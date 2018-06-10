@@ -1,24 +1,26 @@
+import { ADD_COMMENT, REMOVE_COMMENT, EDIT_COMMENT, THUMB_UP_COMMENT, THUMB_DOWN_COMMENT } from './actions';
+
 export function comments(state = {}, action) {
 	switch(action.type) {
-		case 'ADD_COMMENT':
+		case ADD_COMMENT:
 			return {...state, id: action.id, text: action.text, votes: 0};
-		case 'REMOVE_COMMENT':
+		case REMOVE_COMMENT:
 			return {state.filter(comment => comment.id !== action.id)};
-		case 'EDIT_COMMENT':
+		case EDIT_COMMENT:
 			return {
                 state.map(comment => {
                     return (comment.id === action.id) ? {...comment, text: action.text}
                     : comment
                 });
             };
-		case 'THUMB_UP_COMMENT':   
+		case THUMB_UP_COMMENT:   
 			return {
                 state.map(comment => { 
                     return (comment.id === action.id) ? {...comment, votes: comment.votes + 1}
                     : comment
                 });
             }
-		case 'THUMB_DOWN_COMMENT':   
+		case THUMB_DOWN_COMMENT:   
 			return {
                 state.map(comment => { 
                     return (comment.id === action.id) ? {...comment, votes: comment.votes - 1}
