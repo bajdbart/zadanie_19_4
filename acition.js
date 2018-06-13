@@ -6,38 +6,6 @@ export const EDIT_COMMENT = 'EDIT_COMMENT';
 export const THUMB_UP_COMMENT = 'THUMB_UP_COMMENT';
 export const THUMB_DOWN_COMMENT = 'THUMB_DOWN_COMMENT';
 
-////Actions////
-
-{
-    type: ADD_COMMENT,
-    text: 'example',
-	id: 1,
-	votes: 0
-}
-
-{
-    type: REMOVE_COMMENT,
-    id: 4
-}
-
-{
-    type: EDIT_COMMENT,
-    id: 1,
-    text: 'edit'
-}
-
-{
-    type: THUMB_UP_COMMENT,
-    id: 4,
-    votes: 3
-}
-
-{
-    type: THUMB_DOWN_COMMENT,
-    id: 1,
-    votes: 2
-}
-
 ////Action Creators////
 
 function addComment(text) {
